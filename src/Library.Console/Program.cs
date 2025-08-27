@@ -17,8 +17,8 @@ services.AddScoped<ILoanRepository, JsonLoanRepository>();
 services.AddScoped<ILoanService, LoanService>();
 services.AddScoped<IPatronService, PatronService>();
 
-services.AddSingleton<JsonData>();
-services.AddSingleton<ConsoleApp>();
+services.AddSingleton<JsonData>(); // Ensure JsonData is registered
+services.AddSingleton<ConsoleApp>(); // ConsoleApp will receive JsonData
 
 var servicesProvider = services.BuildServiceProvider();
 
